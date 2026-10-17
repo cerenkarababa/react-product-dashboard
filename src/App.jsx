@@ -42,12 +42,21 @@ function App() {
             <p className="eyebrow">OUR CATALOG</p>
             <h2 id="products-heading">Products</h2>
           </div>
-          <button type="button" onClick={handleToggleProducts}>
+          <button
+            type="button"
+            onClick={handleToggleProducts}
+            aria-expanded={showProducts}
+            aria-controls="product-list"
+          >
             {showProducts ? 'Hide Products' : 'Show Products'}
           </button>
         </div>
 
-        {showProducts && <ProductList />}
+        {showProducts && (
+        <div id="product-list">
+          <ProductList />
+        </div>
+      )}
       </section>
     </main>
   )
