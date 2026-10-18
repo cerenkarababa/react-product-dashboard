@@ -25,6 +25,7 @@ function App() {
 
       <section className="welcome-panel" aria-labelledby="welcome-heading">
         <h2 id="welcome-heading">Welcome</h2>
+
         <label htmlFor="name-input">Your name</label>
         <input
           id="name-input"
@@ -33,7 +34,8 @@ function App() {
           onChange={handleNameChange}
           placeholder="Type your name"
         />
-        <p className="greeting">Hello, {name || 'there'}!</p>
+
+        <p className="greeting">Hello, {name.trim() || 'there'}!</p>
       </section>
 
       <section className="products-section" aria-labelledby="products-heading">
@@ -42,6 +44,7 @@ function App() {
             <p className="eyebrow">OUR CATALOG</p>
             <h2 id="products-heading">Products</h2>
           </div>
+
           <button
             type="button"
             onClick={handleToggleProducts}
@@ -52,11 +55,9 @@ function App() {
           </button>
         </div>
 
-        {showProducts && (
-        <div id="product-list">
-          <ProductList />
+        <div id="product-list" hidden={!showProducts}>
+          {showProducts && <ProductList />}
         </div>
-      )}
       </section>
     </main>
   )
