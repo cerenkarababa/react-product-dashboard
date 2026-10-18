@@ -142,6 +142,13 @@ button:focus-visible {
   font-size: 1.1rem;
 }
 
+.product-description {
+  margin-bottom: 18px;
+  color: #687086;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
 .product-price {
   margin-bottom: 0;
   color: #5367c8;
